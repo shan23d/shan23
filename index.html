@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHAN 23 - 2D 3D Result</title>
+
+<title>SHAN 23</title>
 
 <style>
 *{
@@ -14,342 +15,193 @@
 
 body{
   font-family:Arial,"Noto Sans Myanmar",sans-serif;
-  background:#f5f5f5;
-  color:#222;
+  background:#100707;
+  color:#fff;
 }
 
 header{
-  background:linear-gradient(135deg,#b40000,#e00000);
-  color:white;
-  padding:14px 16px;
-  position:sticky;
-  top:0;
-  z-index:100;
-  box-shadow:0 3px 10px #0003;
+  background:linear-gradient(135deg,#8b0000,#d4af37);
+  padding:22px 15px;
+  text-align:center;
+  box-shadow:0 3px 15px #000;
 }
 
 .logo{
-  text-align:center;
-  font-size:30px;
+  font-size:38px;
   font-weight:900;
   color:#ffd700;
-  letter-spacing:2px;
-  text-shadow:2px 2px 2px #700;
+  text-shadow:2px 2px 5px #000;
 }
 
 .subtitle{
-  text-align:center;
-  font-size:12px;
-  color:white;
-  margin-top:3px;
+  margin-top:5px;
+  color:#fff;
+  font-size:14px;
 }
 
 nav{
   display:flex;
-  gap:7px;
   overflow-x:auto;
-  margin-top:12px;
-  padding-bottom:3px;
+  background:#1b0b0b;
+  padding:10px;
+  gap:8px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 nav a{
-  flex:none;
+  white-space:nowrap;
   text-decoration:none;
-  color:white;
-  background:#ffffff22;
-  padding:8px 12px;
+  color:#ffd700;
+  background:#3a1111;
+  padding:9px 13px;
   border-radius:20px;
   font-size:13px;
 }
 
-nav a:hover{
-  background:#ffd700;
-  color:#900;
-}
-
 .container{
-  width:100%;
-  max-width:700px;
+  max-width:650px;
   margin:auto;
-  padding:12px;
-}
-
-.hero{
-  background:linear-gradient(135deg,#fff4b0,#fff);
-  border:2px solid #d4af37;
-  border-radius:18px;
-  padding:20px 15px;
-  text-align:center;
-  margin-bottom:14px;
-}
-
-.hero h1{
-  color:#b00000;
-  font-size:25px;
-  margin-bottom:7px;
-}
-
-.hero p{
-  color:#555;
-  font-size:14px;
-  line-height:1.6;
-}
-
-.section-title{
-  font-size:19px;
-  font-weight:bold;
-  color:#a90000;
-  margin:18px 3px 9px;
+  padding:15px;
 }
 
 .card{
-  background:white;
-  border-radius:17px;
-  padding:15px;
-  margin-bottom:13px;
-  box-shadow:0 3px 12px #00000012;
-  border:1px solid #eee;
+  background:linear-gradient(145deg,#241010,#160808);
+  border:1px solid #6d4b16;
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:15px;
+  box-shadow:0 5px 20px #0008;
 }
 
-.live-card{
-  border:2px solid #e00000;
-}
-
-.live-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:12px;
+.title{
+  color:#ffd700;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:14px;
 }
 
 .live{
-  color:#0a9d45;
-  font-weight:bold;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-bottom:15px;
 }
 
 .dot{
-  display:inline-block;
-  width:9px;
-  height:9px;
-  background:#00b84f;
+  width:12px;
+  height:12px;
+  background:red;
   border-radius:50%;
-  margin-right:5px;
-  box-shadow:0 0 7px #00b84f;
+  box-shadow:0 0 12px red;
 }
 
-.result-box{
-  text-align:center;
-  background:linear-gradient(135deg,#fff8d0,#fff);
-  border:2px solid #d4af37;
-  border-radius:15px;
-  padding:18px 10px;
-}
-
-.result-label{
-  color:#777;
-  font-size:13px;
-}
-
-.result-number{
-  font-size:55px;
+.result{
+  font-size:58px;
   font-weight:900;
-  color:#b00000;
-  letter-spacing:5px;
-  margin:5px 0;
-}
-
-.time{
-  font-size:12px;
-  color:#777;
-}
-
-.three-box{
-  display:flex;
-  gap:10px;
-}
-
-.three-item{
-  flex:1;
-  background:#fff8d5;
-  border:1px solid #d4af37;
-  border-radius:13px;
-  padding:13px 5px;
   text-align:center;
+  color:#ffd700;
+  letter-spacing:8px;
+  text-shadow:0 3px 10px #000;
 }
 
-.three-item small{
-  display:block;
-  color:#777;
-  margin-bottom:5px;
+.small{
+  text-align:center;
+  color:#aaa;
+  margin-top:7px;
 }
 
-.three-number{
-  font-size:30px;
-  font-weight:bold;
-  color:#a90000;
-}
-
-.search-box{
+.searchbox{
   display:flex;
   gap:8px;
 }
 
-.search-box input{
+.searchbox input{
   flex:1;
-  min-width:0;
-  padding:13px;
-  border:2px solid #ddd;
+  padding:15px;
+  border:none;
   border-radius:12px;
-  font-size:16px;
+  font-size:20px;
+  text-align:center;
   outline:none;
-}
-
-.search-box input:focus{
-  border-color:#d4af37;
 }
 
 button{
   border:none;
   border-radius:12px;
-  background:#b50000;
-  color:white;
   padding:0 18px;
+  background:linear-gradient(135deg,#d4af37,#ffd700);
+  color:#260000;
+  font-size:17px;
   font-weight:bold;
-  font-size:15px;
 }
 
 .search-result{
-  margin-top:12px;
-  background:#fff9d9;
-  border:1px solid #d4af37;
-  border-radius:13px;
-  padding:13px;
-  display:none;
+  margin-top:15px;
+  padding:18px;
+  background:#301212;
+  border-radius:14px;
+  text-align:center;
 }
 
-.search-number{
-  color:#b00000;
-  font-size:26px;
+.number{
+  color:#ffd700;
+  font-size:42px;
   font-weight:bold;
 }
 
-table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:13px;
+.meaning{
+  font-size:22px;
+  margin:10px 0;
 }
 
-th{
-  background:#b40000;
-  color:white;
-  padding:10px 5px;
+.related{
+  color:#ffcf40;
 }
 
-td{
-  padding:10px 5px;
-  text-align:center;
-  border-bottom:1px solid #eee;
-}
-
-tr:nth-child(even){
-  background:#fffbea;
-}
-
-.stats{
+.grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:10px;
 }
 
-.stat{
-  background:#fff9d5;
-  border:1px solid #d4af37;
-  border-radius:13px;
-  padding:14px;
-  text-align:center;
-}
-
-.stat strong{
-  display:block;
-  font-size:27px;
-  color:#b00000;
-}
-
-.prediction{
-  background:linear-gradient(135deg,#fff0a8,#fff);
-  border:2px solid #d4af37;
-  border-radius:16px;
+.box{
+  background:#2a1111;
   padding:15px;
-}
-
-.prediction-title{
-  color:#a90000;
-  font-weight:bold;
-  margin-bottom:8px;
-}
-
-.prediction-numbers{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-.pred-num{
-  background:#b40000;
-  color:#ffd700;
-  font-size:21px;
-  font-weight:bold;
-  padding:10px 14px;
   border-radius:12px;
+  text-align:center;
+  border:1px solid #553616;
 }
 
-.note{
-  margin-top:10px;
-  color:#777;
-  font-size:11px;
-  line-height:1.5;
+.box b{
+  display:block;
+  color:#ffd700;
+  font-size:24px;
+  margin-bottom:5px;
 }
 
 .ad{
-  background:linear-gradient(135deg,#ffe000,#ffb000);
-  color:#7a0000;
-  min-height:90px;
-  border-radius:16px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  background:linear-gradient(135deg,#570000,#a67c00);
   text-align:center;
-  padding:15px;
+  padding:25px 10px;
+  border-radius:15px;
+  font-size:20px;
   font-weight:bold;
-  font-size:18px;
-  border:2px solid #d49b00;
 }
 
 .news{
-  border-left:5px solid #c00000;
   padding:12px;
-  background:white;
-  margin-bottom:9px;
-  border-radius:10px;
-}
-
-.news strong{
-  color:#a90000;
+  border-bottom:1px solid #432;
 }
 
 footer{
-  margin-top:25px;
-  background:#8f0000;
-  color:white;
   text-align:center;
-  padding:25px 12px;
-}
-
-.footer-logo{
-  color:#ffd700;
-  font-size:25px;
-  font-weight:bold;
-  margin-bottom:12px;
+  background:#080303;
+  padding:25px 15px;
+  margin-top:20px;
+  color:#aaa;
 }
 
 .social{
@@ -357,34 +209,34 @@ footer{
   justify-content:center;
   gap:8px;
   flex-wrap:wrap;
+  margin:15px 0;
 }
 
 .social a{
-  color:white;
   text-decoration:none;
-  padding:9px 13px;
-  background:#ffffff22;
+  color:white;
+  padding:10px 15px;
   border-radius:20px;
-  font-size:13px;
+  background:#3a1111;
 }
 
-.copy{
-  margin-top:15px;
+.source{
   font-size:11px;
-  color:#ffffffaa;
+  color:#777;
+  margin-top:15px;
 }
 
-@media(max-width:380px){
-  .result-number{
-    font-size:45px;
+@media(max-width:400px){
+  .result{
+    font-size:48px;
   }
 
-  .three-number{
-    font-size:25px;
+  .logo{
+    font-size:32px;
   }
 
-  button{
-    padding:0 13px;
+  .searchbox button{
+    padding:0 12px;
   }
 }
 </style>
@@ -393,407 +245,201 @@ footer{
 <body>
 
 <header>
-
-  <div class="logo">🔴 SHAN 23</div>
-  <div class="subtitle">2D • 3D • Result • Analysis</div>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#2d">2D</a>
-    <a href="#3d">3D</a>
-    <a href="#search">ရှာရန်</a>
-    <a href="#history">History</a>
-    <a href="#stats">Analysis</a>
-    <a href="#prediction">Prediction</a>
-  </nav>
-
+  <div class="logo">🔴 SHAN 23 🟡</div>
+  <div class="subtitle">2D • 3D • Result • History • Analysis</div>
 </header>
 
-<main class="container">
+<nav>
+  <a href="#home">Home</a>
+  <a href="#2d">2D</a>
+  <a href="#3d">3D</a>
+  <a href="#search">3D Search</a>
+  <a href="#history">History</a>
+  <a href="#stats">Statistics</a>
+  <a href="#prediction">Prediction</a>
+</nav>
 
-<!-- HOME -->
+<div class="container">
 
-<section id="home" class="hero">
+<section id="home" class="card">
+  <div class="title">🏠 SHAN 23</div>
+  <p style="line-height:1.7;color:#ccc;">
+    2D / 3D Result၊ History၊ Statistics နှင့်
+    Dream Number Search များကို တစ်နေရာတည်းမှာ ကြည့်ရှုနိုင်ပါသည်။
+  </p>
+</section>
 
-  <h1>SHAN 23</h1>
+<section id="2d" class="card">
+  <div class="title">📡 2D Live Result</div>
 
-  <p>
-    2D / 3D ရလဒ်များ၊ သမိုင်းမှတ်တမ်း၊
-    စာရင်းအင်းနှင့် ခန့်မှန်းချက်များကို
-    တစ်နေရာတည်းတွင် ကြည့်ရှုနိုင်ပါသည်။
+  <div class="live">
+    <span class="dot"></span>
+    <span>LIVE</span>
+  </div>
+
+  <div class="result" id="twoD">--</div>
+  <div class="small">Live result data မထည့်ရသေးပါ</div>
+</section>
+
+<section id="3d" class="card">
+  <div class="title">🔢 3D Result</div>
+
+  <div class="result" id="threeD">---</div>
+  <div class="small">3D Result</div>
+</section>
+
+<section id="search" class="card">
+
+  <div class="title">🔎 3D Dream Search</div>
+
+  <div class="searchbox">
+    <input
+      id="searchInput"
+      type="number"
+      inputmode="numeric"
+      maxlength="3"
+      placeholder="ဥပမာ 145"
+      onkeydown="if(event.key==='Enter') searchDream()"
+    >
+
+    <button onclick="searchDream()">ရှာမည်</button>
+  </div>
+
+  <div id="searchResult" class="search-result">
+    <div style="color:#aaa;">
+      3D နံပါတ်ထည့်ပြီး ရှာပါ
+    </div>
+  </div>
+
+</section>
+
+<section id="history" class="card">
+
+  <div class="title">📜 Result History</div>
+
+  <div class="grid">
+
+    <div class="box">
+      <b>2D</b>
+      Result History
+    </div>
+
+    <div class="box">
+      <b>3D</b>
+      Result History
+    </div>
+
+  </div>
+
+</section>
+
+<section id="stats" class="card">
+
+  <div class="title">📊 Statistics</div>
+
+  <div class="grid">
+
+    <div class="box">
+      <b>--</b>
+      Hot Number
+    </div>
+
+    <div class="box">
+      <b>--</b>
+      Cold Number
+    </div>
+
+    <div class="box">
+      <b>--</b>
+      Frequency
+    </div>
+
+    <div class="box">
+      <b>--</b>
+      Analysis
+    </div>
+
+  </div>
+
+</section>
+
+<section id="prediction" class="card">
+
+  <div class="title">🎯 Prediction</div>
+
+  <div class="box" style="margin-bottom:10px;">
+    <b>2D</b>
+    <div style="color:#ffd700;font-size:22px;">
+      -- . -- . -- . -- . --
+    </div>
+  </div>
+
+  <div class="box">
+    <b>3D</b>
+    <div style="color:#ffd700;font-size:22px;">
+      --- • --- • ---
+    </div>
+  </div>
+
+  <p style="font-size:11px;color:#777;text-align:center;margin-top:12px;">
+    Statistical / entertainment estimate only. Guaranteed result မဟုတ်ပါ။
   </p>
 
 </section>
 
+<section class="card">
 
-<!-- 2D LIVE -->
+  <div class="title">📢 Advertisement</div>
 
-<div class="section-title" id="2d">
-  📡 2D Live Result
-</div>
-
-<div class="card live-card">
-
-  <div class="live-header">
-    <b>2D Result</b>
-    <span class="live">
-      <span class="dot"></span>LIVE
+  <div class="ad">
+    SHAN 23 Daily Advertisement
+    <br>
+    <span style="font-size:13px;font-weight:normal;">
+      Your Advertisement Here
     </span>
   </div>
 
-  <div class="result-box">
+</section>
 
-    <div class="result-label">
-      Demo Result
-    </div>
+<section class="card">
 
-    <div class="result-number" id="live2d">
-      23
-    </div>
-
-    <div class="time">
-      နောက်ဆုံး Update — Demo
-    </div>
-
-  </div>
-
-  <div class="note">
-    ⚠️ ဤနေရာရှိ Result သည် Demo Data ဖြစ်ပါသည်။
-    အမှန်တကယ် Live Result အတွက် Data Source/API ချိတ်ဆက်ရန်လိုအပ်ပါသည်။
-  </div>
-
-</div>
-
-
-<!-- 3D -->
-
-<div class="section-title" id="3d">
-  🔢 3D Result
-</div>
-
-<div class="card">
-
-  <div class="three-box">
-
-    <div class="three-item">
-      <small>Latest</small>
-      <div class="three-number">601</div>
-    </div>
-
-    <div class="three-item">
-      <small>Previous</small>
-      <div class="three-number">145</div>
-    </div>
-
-    <div class="three-item">
-      <small>Sample</small>
-      <div class="three-number">723</div>
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- SEARCH -->
-
-<div class="section-title" id="search">
-  🔎 3D နံပါတ် ရှာရန်
-</div>
-
-<div class="card">
-
-  <div class="search-box">
-
-    <input
-      type="number"
-      id="searchInput"
-      placeholder="ဥပမာ - 601"
-      maxlength="3"
-    >
-
-    <button onclick="searchDream()">
-      ရှာမယ်
-    </button>
-
-  </div>
-
-  <div id="searchResult" class="search-result"></div>
-
-  <div class="note">
-    လက်ရှိတွင် Demo Data အချို့သာ ထည့်သွင်းထားပါသည်။
-    1000 Dreams Data ကို နောက်ပိုင်းတွင် ထည့်သွင်းနိုင်ပါသည်။
-  </div>
-
-</div>
-
-
-<!-- HISTORY -->
-
-<div class="section-title" id="history">
-  📜 Result History
-</div>
-
-<div class="card">
-
-  <h4 style="color:#a90000;margin-bottom:9px;">
-    2D History
-  </h4>
-
-  <table>
-
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>AM</th>
-        <th>PM</th>
-      </tr>
-    </thead>
-
-    <tbody>
-
-      <tr>
-        <td>Demo 01</td>
-        <td>23</td>
-        <td>79</td>
-      </tr>
-
-      <tr>
-        <td>Demo 02</td>
-        <td>45</td>
-        <td>70</td>
-      </tr>
-
-      <tr>
-        <td>Demo 03</td>
-        <td>11</td>
-        <td>23</td>
-      </tr>
-
-      <tr>
-        <td>Demo 04</td>
-        <td>79</td>
-        <td>45</td>
-      </tr>
-
-    </tbody>
-
-  </table>
-
-</div>
-
-
-<div class="card">
-
-  <h4 style="color:#a90000;margin-bottom:9px;">
-    3D History
-  </h4>
-
-  <table>
-
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-
-    <tbody>
-
-      <tr>
-        <td>Demo 01</td>
-        <td>601</td>
-      </tr>
-
-      <tr>
-        <td>Demo 02</td>
-        <td>145</td>
-      </tr>
-
-      <tr>
-        <td>Demo 03</td>
-        <td>723</td>
-      </tr>
-
-    </tbody>
-
-  </table>
-
-</div>
-
-
-<!-- STATISTICS -->
-
-<div class="section-title" id="stats">
-  📊 Statistics / Analysis
-</div>
-
-<div class="card">
-
-  <div class="stats">
-
-    <div class="stat">
-      <small>2D Total</small>
-      <strong id="total2d">8</strong>
-    </div>
-
-    <div class="stat">
-      <small>Unique</small>
-      <strong id="unique2d">5</strong>
-    </div>
-
-    <div class="stat">
-      <small>Most Seen</small>
-      <strong id="most2d">23</strong>
-    </div>
-
-    <div class="stat">
-      <small>3D Records</small>
-      <strong>3</strong>
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- PREDICTION -->
-
-<div class="section-title" id="prediction">
-  🎯 Auto Prediction
-</div>
-
-<div class="card">
-
-  <div class="prediction">
-
-    <div class="prediction-title">
-      📅 ဒီအပတ် 2D Statistical Candidates
-    </div>
-
-    <div
-      class="prediction-numbers"
-      id="prediction2d">
-    </div>
-
-    <div class="note">
-      Historical data ကိုအခြေခံပြီး JavaScript ဖြင့်
-      အလိုအလျောက်တွက်ချက်ထားသော Statistical Estimate ဖြစ်ပါသည်။
-      အာမခံချက်ရှိသော ရလဒ်မဟုတ်ပါ။
-    </div>
-
-  </div>
-
-</div>
-
-
-<div class="card">
-
-  <div class="prediction">
-
-    <div class="prediction-title">
-      🎯 3D Monthly Candidates
-    </div>
-
-    <div
-      class="prediction-numbers"
-      id="prediction3d">
-    </div>
-
-    <div class="note">
-      3D candidates များသည် sample historical data မှ
-      အလိုအလျောက်တွက်ချက်ထားခြင်းဖြစ်ပါသည်။
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- AD -->
-
-<div class="section-title">
-  📢 Daily Advertisement
-</div>
-
-<div class="card">
-
-  <div class="ad">
-    📢 YOUR ADVERTISEMENT HERE
-    <br>
-    SHAN 23
-  </div>
-
-</div>
-
-
-<!-- NEWS -->
-
-<div class="section-title">
-  📰 Announcement / News
-</div>
-
-<div class="card">
+  <div class="title">📰 Announcement / News</div>
 
   <div class="news">
-    <strong>📢 SHAN 23 Update</strong>
-    <p style="font-size:13px;margin-top:5px;">
-      SHAN 23 Website ကို Mobile အတွက်
-      ပိုမိုလွယ်ကူစွာ အသုံးပြုနိုင်ရန် ပြုလုပ်ထားပါသည်။
-    </p>
+    📢 SHAN 23 မှ ကြိုဆိုပါတယ်။
   </div>
 
   <div class="news">
-    <strong>🔢 3D Search</strong>
-    <p style="font-size:13px;margin-top:5px;">
-      3D နံပါတ်ထည့်ပြီး Dream / Object အချက်အလက်များ
-      ရှာဖွေနိုင်မည့် System ဖြစ်ပါသည်။
-    </p>
+    🔔 Result နှင့် History များကို စနစ်တကျ ပြသပေးမည်။
   </div>
 
-  <div class="news">
-    <strong>📊 Analysis</strong>
-    <p style="font-size:13px;margin-top:5px;">
-      Historical Result Data ကိုအသုံးပြုပြီး
-      Statistics နှင့် Analysis ပြုလုပ်နိုင်ပါသည်။
-    </p>
-  </div>
+</section>
 
 </div>
-
-</main>
-
-
-<!-- FOOTER -->
 
 <footer>
 
-  <div class="footer-logo">
-    🔴 SHAN 23
+  <div style="color:#ffd700;font-size:20px;font-weight:bold;">
+    🔴 SHAN 23 🟡
   </div>
-
-  <p style="font-size:13px;margin-bottom:13px;">
-    Follow / Contact Us
-  </p>
 
   <div class="social">
 
-    <a href="#" target="_blank">
-      Telegram
-    </a>
+    <a href="#" target="_blank">Telegram</a>
 
-    <a href="#" target="_blank">
-      Viber
-    </a>
+    <a href="#" target="_blank">Viber</a>
 
-    <a href="#" target="_blank">
-      Facebook
-    </a>
+    <a href="#" target="_blank">Facebook</a>
 
   </div>
 
-  <div class="copy">
-    © 2026 SHAN 23 • All Rights Reserved
+  <div class="source">
+    3D Dream Reference:
+    A Thousand Dreams
+  </div>
+
+  <div style="margin-top:10px;font-size:11px;">
+    © 2026 SHAN 23
   </div>
 
 </footer>
@@ -802,295 +448,191 @@ footer{
 <script>
 
 /* =========================
-   2D HISTORICAL DATA
+   SHAN 23 DREAM DATABASE
+   Verified sample data
 ========================= */
 
-const history2D = [
-  "23","79",
-  "45","70",
-  "11","23",
-  "79","45"
-];
+const DREAMS = {
 
+  "000":{
+    meaning:"သံဗူး",
+    related:"498"
+  },
 
-/* =========================
-   3D DREAM DATA
-   Sample verified entry
-========================= */
+  "001":{
+    meaning:"နဂါး",
+    related:"545"
+  },
 
-const dreamData = {
+  "002":{
+    meaning:"မှန်ဘီလူး",
+    related:"503"
+  },
+
+  "003":{
+    meaning:"ဓါးဆောင်သူ",
+    related:"502"
+  },
+
+  "023":{
+    meaning:"ဝက်",
+    related:"534"
+  },
+
+  "051":{
+    meaning:"ပုတီးစိပ်သူ",
+    related:"595"
+  },
+
+  "075":{
+    meaning:"ခွေးဖြူ",
+    related:"585"
+  },
+
+  "077":{
+    meaning:"ကြောင်",
+    related:"561"
+  },
+
+  "100":{
+    meaning:"ကြေငြာသူ",
+    related:"598"
+  },
+
+  "101":{
+    meaning:"ကောင်းကင်",
+    related:"645"
+  },
+
+  "145":{
+    meaning:"စုတ်တံ",
+    related:"601"
+  },
+
+  "150":{
+    meaning:"ကျားကွက်",
+    related:"648"
+  },
 
   "601":{
     meaning:"ရသေ့ဒေါက်ချာ",
     related:"145"
   },
 
-  "145":{
-    meaning:"601 နှင့် ဆက်စပ်သော နံပါတ်",
-    related:"601"
+  "651":{
+    meaning:"ရေကူးကန်",
+    related:"145"
   },
 
-  "723":{
-    meaning:"Demo Dream Data",
-    related:"321"
+  "999":{
+    meaning:"ပန်းကန်စင်",
+    related:"480"
   }
 
 };
 
 
 /* =========================
-   SEARCH
+   NORMALIZE 3D NUMBER
+========================= */
+
+function normalize3D(value){
+
+  let digits = String(value)
+    .replace(/\D/g,'');
+
+  if(!digits){
+    return "";
+  }
+
+  digits = digits.slice(-3);
+
+  return digits.padStart(3,"0");
+}
+
+
+/* =========================
+   SEARCH DREAM
 ========================= */
 
 function searchDream(){
 
   const input =
-    document.getElementById("searchInput")
-    .value
-    .trim();
+    document.getElementById("searchInput");
 
   const result =
     document.getElementById("searchResult");
 
-  if(!input){
+  const number =
+    normalize3D(input.value);
 
-    result.style.display="block";
+  if(!number){
 
-    result.innerHTML =
-      "⚠️ 3D နံပါတ်ထည့်ပေးပါ။";
+    result.innerHTML = `
+      <div style="color:#ff7777;">
+        ⚠️ 3D နံပါတ်ထည့်ပါ
+      </div>
+    `;
 
     return;
   }
 
-  const data = dreamData[input];
 
-  if(data){
+  const data = DREAMS[number];
 
-    result.style.display="block";
 
-    result.innerHTML = `
-      <div class="search-number">
-        ${input}
-      </div>
-
-      <div style="margin-top:7px;">
-        📝 အဓိပ္ပါယ် —
-        <b>${data.meaning}</b>
-      </div>
-
-      <div style="margin-top:7px;">
-        🔢 ဆက်စပ်နံပါတ် —
-        <b>${data.related}</b>
-      </div>
-    `;
-
-  }else{
-
-    result.style.display="block";
+  if(!data){
 
     result.innerHTML = `
-      ❌ <b>${input}</b>
-      အတွက် Data မတွေ့သေးပါ။
-      <br><br>
-      နောက်ပိုင်းတွင် 1000 Dreams Data
-      ထည့်သွင်းနိုင်ပါသည်။
+
+      <div class="number">
+        ${number}
+      </div>
+
+      <div style="margin-top:10px;color:#ff8888;">
+        ဒီနံပါတ်အတွက် Dream Data မတွေ့သေးပါ။
+      </div>
+
+      <div style="margin-top:8px;color:#888;font-size:13px;">
+        Database ထဲသို့ data ထပ်မံထည့်သွင်းပေးမည်။
+      </div>
+
     `;
 
+    return;
   }
 
+
+  result.innerHTML = `
+
+    <div style="color:#aaa;">
+      3D Number
+    </div>
+
+    <div class="number">
+      ${number}
+    </div>
+
+    <div class="meaning">
+      💤 ${data.meaning}
+    </div>
+
+    <div class="related">
+      🔗 ဆက်စပ်နံပါတ် — 
+      <strong>${data.related}</strong>
+    </div>
+
+  `;
 }
 
 
 /* =========================
-   ENTER KEY SEARCH
+   DEMO RESULTS
 ========================= */
 
-document
-  .getElementById("searchInput")
-  .addEventListener("keydown",function(e){
+document.getElementById("twoD").textContent="--";
 
-    if(e.key==="Enter"){
-      searchDream();
-    }
-
-  });
-
-
-/* =========================
-   STATISTICS
-========================= */
-
-function calculateStats(){
-
-  const total =
-    history2D.length;
-
-  const unique =
-    [...new Set(history2D)].length;
-
-  const counts = {};
-
-  history2D.forEach(num=>{
-    counts[num] =
-      (counts[num] || 0) + 1;
-  });
-
-  let most =
-    history2D[0];
-
-  Object.keys(counts).forEach(num=>{
-
-    if(
-      counts[num] >
-      counts[most]
-    ){
-      most=num;
-    }
-
-  });
-
-  document
-    .getElementById("total2d")
-    .textContent=total;
-
-  document
-    .getElementById("unique2d")
-    .textContent=unique;
-
-  document
-    .getElementById("most2d")
-    .textContent=most;
-
-}
-
-
-/* =========================
-   AUTO 2D PREDICTION
-========================= */
-
-function generate2DPrediction(){
-
-  const counts={};
-
-  history2D.forEach(num=>{
-
-    counts[num] =
-      (counts[num] || 0)+1;
-
-  });
-
-  const sorted =
-    Object.keys(counts)
-      .sort(
-        (a,b)=>
-        counts[b]-counts[a]
-      );
-
-  let candidates =
-    sorted.slice(0,5);
-
-  /*
-   If fewer than 5 numbers exist,
-   generate additional candidates.
-  */
-
-  const allNumbers =
-    Array.from(
-      {length:100},
-      (_,i)=>
-      String(i).padStart(2,"0")
-    );
-
-  for(
-    let i=0;
-    candidates.length<5 &&
-    i<allNumbers.length;
-    i++
-  ){
-
-    if(
-      !candidates.includes(
-        allNumbers[i]
-      )
-    ){
-
-      candidates.push(
-        allNumbers[i]
-      );
-
-    }
-
-  }
-
-  const box =
-    document
-      .getElementById("prediction2d");
-
-  box.innerHTML="";
-
-  candidates
-    .slice(0,5)
-    .forEach(num=>{
-
-      const span =
-        document.createElement("span");
-
-      span.className="pred-num";
-
-      span.textContent=num;
-
-      box.appendChild(span);
-
-    });
-
-}
-
-
-/* =========================
-   AUTO 3D PREDICTION
-========================= */
-
-function generate3DPrediction(){
-
-  const candidates=[
-    "601",
-    "145",
-    "723",
-    "321",
-    "230"
-  ];
-
-  const box =
-    document
-      .getElementById("prediction3d");
-
-  box.innerHTML="";
-
-  candidates.forEach(num=>{
-
-    const span =
-      document.createElement("span");
-
-    span.className="pred-num";
-
-    span.textContent=num;
-
-    box.appendChild(span);
-
-  });
-
-}
-
-
-/* =========================
-   START
-========================= */
-
-calculateStats();
-
-generate2DPrediction();
-
-generate3DPrediction();
+document.getElementById("threeD").textContent="---";
 
 </script>
 
