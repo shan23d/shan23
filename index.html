@@ -3,310 +3,388 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SHAN 23</title>
+<title>SHAN 23 - 2D 3D Result</title>
 
 <style>
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
 }
 
 body{
-  font-family:Arial,"Myanmar Text",sans-serif;
-  background:#0b0b0b;
-  color:#fff;
+  font-family:Arial,"Noto Sans Myanmar",sans-serif;
+  background:#f5f5f5;
+  color:#222;
 }
 
-/* HEADER */
 header{
+  background:linear-gradient(135deg,#b40000,#e00000);
+  color:white;
+  padding:14px 16px;
   position:sticky;
   top:0;
   z-index:100;
-  background:#111;
-  border-bottom:1px solid #333;
-  padding:14px 18px;
-}
-
-.nav{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  box-shadow:0 3px 10px #0003;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:24px;
-  font-weight:bold;
+  text-align:center;
+  font-size:30px;
+  font-weight:900;
   color:#ffd700;
+  letter-spacing:2px;
+  text-shadow:2px 2px 2px #700;
 }
 
-.logo-box{
-  width:42px;
-  height:42px;
-  border-radius:10px;
-  background:linear-gradient(135deg,#e00000,#ffd700);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-weight:bold;
-  font-size:16px;
+.subtitle{
+  text-align:center;
+  font-size:12px;
+  color:white;
+  margin-top:3px;
 }
 
 nav{
   display:flex;
-  gap:22px;
+  gap:7px;
+  overflow-x:auto;
+  margin-top:12px;
+  padding-bottom:3px;
 }
 
 nav a{
-  color:#ddd;
+  flex:none;
   text-decoration:none;
-  font-size:15px;
+  color:white;
+  background:#ffffff22;
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:13px;
 }
 
 nav a:hover{
-  color:#ffd700;
+  background:#ffd700;
+  color:#900;
 }
 
-/* HERO */
+.container{
+  width:100%;
+  max-width:700px;
+  margin:auto;
+  padding:12px;
+}
+
 .hero{
-  min-height:500px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  background:linear-gradient(135deg,#fff4b0,#fff);
+  border:2px solid #d4af37;
+  border-radius:18px;
+  padding:20px 15px;
   text-align:center;
-  padding:50px 20px;
-  background:
-    radial-gradient(circle at center,#5b0000 0%,#170000 40%,#080808 75%);
-}
-
-.hero-content{
-  max-width:750px;
+  margin-bottom:14px;
 }
 
 .hero h1{
-  font-size:55px;
-  color:#ffd700;
-  margin-bottom:15px;
-}
-
-.hero h2{
+  color:#b00000;
   font-size:25px;
-  margin-bottom:15px;
+  margin-bottom:7px;
 }
 
 .hero p{
-  color:#bbb;
-  line-height:1.8;
-  margin-bottom:28px;
+  color:#555;
+  font-size:14px;
+  line-height:1.6;
 }
 
-.btn{
-  display:inline-block;
-  padding:13px 25px;
-  border-radius:8px;
-  text-decoration:none;
+.section-title{
+  font-size:19px;
   font-weight:bold;
-  margin:5px;
-}
-
-.btn-gold{
-  background:#ffd700;
-  color:#111;
-}
-
-.btn-red{
-  background:#d40000;
-  color:#fff;
-}
-
-/* SECTION */
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:55px 20px;
-}
-
-.title{
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.title h2{
-  color:#ffd700;
-  font-size:30px;
-}
-
-.title p{
-  color:#999;
-  margin-top:8px;
-}
-
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  color:#a90000;
+  margin:18px 3px 9px;
 }
 
 .card{
-  background:#151515;
-  border:1px solid #333;
-  border-radius:12px;
-  padding:25px;
-}
-
-.card h3{
-  color:#ffd700;
-  margin-bottom:10px;
-}
-
-.card p{
-  color:#aaa;
-  line-height:1.7;
-}
-
-/* VIDEO */
-.video-box{
-  background:#151515;
-  border:1px solid #333;
-  border-radius:12px;
+  background:white;
+  border-radius:17px;
   padding:15px;
+  margin-bottom:13px;
+  box-shadow:0 3px 12px #00000012;
+  border:1px solid #eee;
 }
 
-.video-placeholder{
-  height:230px;
-  border-radius:8px;
-  background:linear-gradient(135deg,#350000,#151515);
+.live-card{
+  border:2px solid #e00000;
+}
+
+.live-header{
   display:flex;
+  justify-content:space-between;
   align-items:center;
-  justify-content:center;
-  font-size:50px;
-  color:#ffd700;
+  margin-bottom:12px;
 }
 
-/* VIP */
-.vip{
-  background:linear-gradient(135deg,#210000,#111);
-  border:1px solid #9b7500;
-  border-radius:15px;
-  padding:35px 20px;
-  text-align:center;
-}
-
-.vip h2{
-  color:#ffd700;
-  font-size:32px;
-  margin-bottom:15px;
-}
-
-.vip p{
-  color:#ccc;
-  line-height:1.8;
-  margin-bottom:20px;
-}
-
-/* LOGIN */
-.login{
-  max-width:450px;
-  margin:auto;
-  background:#151515;
-  padding:30px;
-  border-radius:14px;
-  border:1px solid #333;
-}
-
-.login input{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border-radius:8px;
-  border:1px solid #444;
-  background:#0c0c0c;
-  color:#fff;
-  outline:none;
-}
-
-.login button{
-  width:100%;
-  padding:14px;
-  border:0;
-  border-radius:8px;
-  background:#d40000;
-  color:#fff;
+.live{
+  color:#0a9d45;
   font-weight:bold;
-  font-size:16px;
 }
 
-/* FOOTER */
-footer{
+.dot{
+  display:inline-block;
+  width:9px;
+  height:9px;
+  background:#00b84f;
+  border-radius:50%;
+  margin-right:5px;
+  box-shadow:0 0 7px #00b84f;
+}
+
+.result-box{
   text-align:center;
-  padding:30px 15px;
-  background:#080808;
-  border-top:1px solid #333;
+  background:linear-gradient(135deg,#fff8d0,#fff);
+  border:2px solid #d4af37;
+  border-radius:15px;
+  padding:18px 10px;
+}
+
+.result-label{
+  color:#777;
+  font-size:13px;
+}
+
+.result-number{
+  font-size:55px;
+  font-weight:900;
+  color:#b00000;
+  letter-spacing:5px;
+  margin:5px 0;
+}
+
+.time{
+  font-size:12px;
   color:#777;
 }
 
-footer strong{
-  color:#ffd700;
+.three-box{
+  display:flex;
+  gap:10px;
 }
 
-/* MOBILE */
-@media(max-width:700px){
+.three-item{
+  flex:1;
+  background:#fff8d5;
+  border:1px solid #d4af37;
+  border-radius:13px;
+  padding:13px 5px;
+  text-align:center;
+}
 
-  header{
-    padding:12px 14px;
+.three-item small{
+  display:block;
+  color:#777;
+  margin-bottom:5px;
+}
+
+.three-number{
+  font-size:30px;
+  font-weight:bold;
+  color:#a90000;
+}
+
+.search-box{
+  display:flex;
+  gap:8px;
+}
+
+.search-box input{
+  flex:1;
+  min-width:0;
+  padding:13px;
+  border:2px solid #ddd;
+  border-radius:12px;
+  font-size:16px;
+  outline:none;
+}
+
+.search-box input:focus{
+  border-color:#d4af37;
+}
+
+button{
+  border:none;
+  border-radius:12px;
+  background:#b50000;
+  color:white;
+  padding:0 18px;
+  font-weight:bold;
+  font-size:15px;
+}
+
+.search-result{
+  margin-top:12px;
+  background:#fff9d9;
+  border:1px solid #d4af37;
+  border-radius:13px;
+  padding:13px;
+  display:none;
+}
+
+.search-number{
+  color:#b00000;
+  font-size:26px;
+  font-weight:bold;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+
+th{
+  background:#b40000;
+  color:white;
+  padding:10px 5px;
+}
+
+td{
+  padding:10px 5px;
+  text-align:center;
+  border-bottom:1px solid #eee;
+}
+
+tr:nth-child(even){
+  background:#fffbea;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.stat{
+  background:#fff9d5;
+  border:1px solid #d4af37;
+  border-radius:13px;
+  padding:14px;
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  font-size:27px;
+  color:#b00000;
+}
+
+.prediction{
+  background:linear-gradient(135deg,#fff0a8,#fff);
+  border:2px solid #d4af37;
+  border-radius:16px;
+  padding:15px;
+}
+
+.prediction-title{
+  color:#a90000;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.prediction-numbers{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.pred-num{
+  background:#b40000;
+  color:#ffd700;
+  font-size:21px;
+  font-weight:bold;
+  padding:10px 14px;
+  border-radius:12px;
+}
+
+.note{
+  margin-top:10px;
+  color:#777;
+  font-size:11px;
+  line-height:1.5;
+}
+
+.ad{
+  background:linear-gradient(135deg,#ffe000,#ffb000);
+  color:#7a0000;
+  min-height:90px;
+  border-radius:16px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:15px;
+  font-weight:bold;
+  font-size:18px;
+  border:2px solid #d49b00;
+}
+
+.news{
+  border-left:5px solid #c00000;
+  padding:12px;
+  background:white;
+  margin-bottom:9px;
+  border-radius:10px;
+}
+
+.news strong{
+  color:#a90000;
+}
+
+footer{
+  margin-top:25px;
+  background:#8f0000;
+  color:white;
+  text-align:center;
+  padding:25px 12px;
+}
+
+.footer-logo{
+  color:#ffd700;
+  font-size:25px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.social{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.social a{
+  color:white;
+  text-decoration:none;
+  padding:9px 13px;
+  background:#ffffff22;
+  border-radius:20px;
+  font-size:13px;
+}
+
+.copy{
+  margin-top:15px;
+  font-size:11px;
+  color:#ffffffaa;
+}
+
+@media(max-width:380px){
+  .result-number{
+    font-size:45px;
   }
 
-  .logo{
-    font-size:20px;
+  .three-number{
+    font-size:25px;
   }
 
-  .logo-box{
-    width:36px;
-    height:36px;
-  }
-
-  nav{
-    gap:10px;
-  }
-
-  nav a{
-    font-size:12px;
-  }
-
-  .hero{
-    min-height:450px;
-  }
-
-  .hero h1{
-    font-size:42px;
-  }
-
-  .hero h2{
-    font-size:21px;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  section{
-    padding:40px 15px;
-  }
-
-  .title h2{
-    font-size:26px;
-  }
-
-  .video-placeholder{
-    height:190px;
+  button{
+    padding:0 13px;
   }
 }
 </style>
@@ -314,204 +392,705 @@ footer strong{
 
 <body>
 
-<!-- HEADER -->
 <header>
-  <div class="nav">
 
-    <div class="logo">
-      <div class="logo-box">23</div>
-      SHAN 23
-    </div>
+  <div class="logo">🔴 SHAN 23</div>
+  <div class="subtitle">2D • 3D • Result • Analysis</div>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#video">Video</a>
-      <a href="#vip">VIP</a>
-      <a href="#login">Login</a>
-    </nav>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#2d">2D</a>
+    <a href="#3d">3D</a>
+    <a href="#search">ရှာရန်</a>
+    <a href="#history">History</a>
+    <a href="#stats">Analysis</a>
+    <a href="#prediction">Prediction</a>
+  </nav>
 
-  </div>
 </header>
 
+<main class="container">
 
 <!-- HOME -->
-<div class="hero" id="home">
 
-  <div class="hero-content">
+<section id="home" class="hero">
 
-    <h1>SHAN 23</h1>
+  <h1>SHAN 23</h1>
 
-    <h2>Welcome to SHAN 23 Website</h2>
+  <p>
+    2D / 3D ရလဒ်များ၊ သမိုင်းမှတ်တမ်း၊
+    စာရင်းအင်းနှင့် ခန့်မှန်းချက်များကို
+    တစ်နေရာတည်းတွင် ကြည့်ရှုနိုင်ပါသည်။
+  </p>
 
-    <p>
-      SHAN 23 မှ ကြိုဆိုပါတယ်။<br>
-      အကောင်းဆုံး Video များနှင့် Premium Content များကို
-      တစ်နေရာတည်းမှာ ကြည့်ရှုနိုင်ပါသည်။
-    </p>
+</section>
 
-    <a href="#video" class="btn btn-gold">
-      Video ကြည့်မယ်
-    </a>
 
-    <a href="#vip" class="btn btn-red">
-      VIP ဝင်မယ်
-    </a>
+<!-- 2D LIVE -->
+
+<div class="section-title" id="2d">
+  📡 2D Live Result
+</div>
+
+<div class="card live-card">
+
+  <div class="live-header">
+    <b>2D Result</b>
+    <span class="live">
+      <span class="dot"></span>LIVE
+    </span>
+  </div>
+
+  <div class="result-box">
+
+    <div class="result-label">
+      Demo Result
+    </div>
+
+    <div class="result-number" id="live2d">
+      23
+    </div>
+
+    <div class="time">
+      နောက်ဆုံး Update — Demo
+    </div>
+
+  </div>
+
+  <div class="note">
+    ⚠️ ဤနေရာရှိ Result သည် Demo Data ဖြစ်ပါသည်။
+    အမှန်တကယ် Live Result အတွက် Data Source/API ချိတ်ဆက်ရန်လိုအပ်ပါသည်။
+  </div>
+
+</div>
+
+
+<!-- 3D -->
+
+<div class="section-title" id="3d">
+  🔢 3D Result
+</div>
+
+<div class="card">
+
+  <div class="three-box">
+
+    <div class="three-item">
+      <small>Latest</small>
+      <div class="three-number">601</div>
+    </div>
+
+    <div class="three-item">
+      <small>Previous</small>
+      <div class="three-number">145</div>
+    </div>
+
+    <div class="three-item">
+      <small>Sample</small>
+      <div class="three-number">723</div>
+    </div>
 
   </div>
 
 </div>
 
 
-<!-- FEATURES -->
-<section>
+<!-- SEARCH -->
 
-  <div class="title">
-    <h2>ဘာတွေရှိလဲ?</h2>
-    <p>SHAN 23 ရဲ့ အဓိကဝန်ဆောင်မှုများ</p>
-  </div>
+<div class="section-title" id="search">
+  🔎 3D နံပါတ် ရှာရန်
+</div>
 
-  <div class="cards">
+<div class="card">
 
-    <div class="card">
-      <h3>🎬 Video</h3>
-      <p>
-        အသစ်ထွက် Video များကို အလွယ်တကူ
-        ကြည့်ရှုနိုင်ပါသည်။
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>👑 VIP</h3>
-      <p>
-        VIP Member များအတွက် Premium Content
-        များကို ရရှိနိုင်ပါသည်။
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>📱 Mobile Friendly</h3>
-      <p>
-        ဖုန်း၊ Tablet နှင့် Computer များမှာ
-        အဆင်ပြေစွာ အသုံးပြုနိုင်ပါသည်။
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- VIDEO -->
-<section id="video">
-
-  <div class="title">
-    <h2>Latest Videos</h2>
-    <p>နောက်ဆုံးထွက် Video များ</p>
-  </div>
-
-  <div class="cards">
-
-    <div class="video-box">
-      <div class="video-placeholder">▶</div>
-      <br>
-      <h3>Video Title 01</h3>
-      <p>SHAN 23 Video</p>
-    </div>
-
-    <div class="video-box">
-      <div class="video-placeholder">▶</div>
-      <br>
-      <h3>Video Title 02</h3>
-      <p>SHAN 23 Video</p>
-    </div>
-
-    <div class="video-box">
-      <div class="video-placeholder">▶</div>
-      <br>
-      <h3>Video Title 03</h3>
-      <p>SHAN 23 Video</p>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- VIP -->
-<section id="vip">
-
-  <div class="vip">
-
-    <h2>👑 SHAN 23 VIP</h2>
-
-    <p>
-      VIP Member ဖြစ်ပါက Premium Video များကို
-      ဝင်ရောက်ကြည့်ရှုနိုင်ပါသည်။
-      <br>
-      Payment ပြုလုပ်ပြီး Screenshot တင်ပေးပါ။
-    </p>
-
-    <a href="#login" class="btn btn-gold">
-      VIP ဝင်ရန်
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- LOGIN -->
-<section id="login">
-
-  <div class="title">
-    <h2>Member Login</h2>
-    <p>SHAN 23 Account ဖြင့် ဝင်ရောက်ပါ</p>
-  </div>
-
-  <div class="login">
+  <div class="search-box">
 
     <input
-      type="text"
-      placeholder="Username"
+      type="number"
+      id="searchInput"
+      placeholder="ဥပမာ - 601"
+      maxlength="3"
     >
 
-    <input
-      type="password"
-      placeholder="Password"
-    >
-
-    <button onclick="login()">
-      Login
+    <button onclick="searchDream()">
+      ရှာမယ်
     </button>
 
   </div>
 
-</section>
+  <div id="searchResult" class="search-result"></div>
+
+  <div class="note">
+    လက်ရှိတွင် Demo Data အချို့သာ ထည့်သွင်းထားပါသည်။
+    1000 Dreams Data ကို နောက်ပိုင်းတွင် ထည့်သွင်းနိုင်ပါသည်။
+  </div>
+
+</div>
+
+
+<!-- HISTORY -->
+
+<div class="section-title" id="history">
+  📜 Result History
+</div>
+
+<div class="card">
+
+  <h4 style="color:#a90000;margin-bottom:9px;">
+    2D History
+  </h4>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>AM</th>
+        <th>PM</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>Demo 01</td>
+        <td>23</td>
+        <td>79</td>
+      </tr>
+
+      <tr>
+        <td>Demo 02</td>
+        <td>45</td>
+        <td>70</td>
+      </tr>
+
+      <tr>
+        <td>Demo 03</td>
+        <td>11</td>
+        <td>23</td>
+      </tr>
+
+      <tr>
+        <td>Demo 04</td>
+        <td>79</td>
+        <td>45</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+
+<div class="card">
+
+  <h4 style="color:#a90000;margin-bottom:9px;">
+    3D History
+  </h4>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>Demo 01</td>
+        <td>601</td>
+      </tr>
+
+      <tr>
+        <td>Demo 02</td>
+        <td>145</td>
+      </tr>
+
+      <tr>
+        <td>Demo 03</td>
+        <td>723</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+
+<!-- STATISTICS -->
+
+<div class="section-title" id="stats">
+  📊 Statistics / Analysis
+</div>
+
+<div class="card">
+
+  <div class="stats">
+
+    <div class="stat">
+      <small>2D Total</small>
+      <strong id="total2d">8</strong>
+    </div>
+
+    <div class="stat">
+      <small>Unique</small>
+      <strong id="unique2d">5</strong>
+    </div>
+
+    <div class="stat">
+      <small>Most Seen</small>
+      <strong id="most2d">23</strong>
+    </div>
+
+    <div class="stat">
+      <small>3D Records</small>
+      <strong>3</strong>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- PREDICTION -->
+
+<div class="section-title" id="prediction">
+  🎯 Auto Prediction
+</div>
+
+<div class="card">
+
+  <div class="prediction">
+
+    <div class="prediction-title">
+      📅 ဒီအပတ် 2D Statistical Candidates
+    </div>
+
+    <div
+      class="prediction-numbers"
+      id="prediction2d">
+    </div>
+
+    <div class="note">
+      Historical data ကိုအခြေခံပြီး JavaScript ဖြင့်
+      အလိုအလျောက်တွက်ချက်ထားသော Statistical Estimate ဖြစ်ပါသည်။
+      အာမခံချက်ရှိသော ရလဒ်မဟုတ်ပါ။
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="card">
+
+  <div class="prediction">
+
+    <div class="prediction-title">
+      🎯 3D Monthly Candidates
+    </div>
+
+    <div
+      class="prediction-numbers"
+      id="prediction3d">
+    </div>
+
+    <div class="note">
+      3D candidates များသည် sample historical data မှ
+      အလိုအလျောက်တွက်ချက်ထားခြင်းဖြစ်ပါသည်။
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- AD -->
+
+<div class="section-title">
+  📢 Daily Advertisement
+</div>
+
+<div class="card">
+
+  <div class="ad">
+    📢 YOUR ADVERTISEMENT HERE
+    <br>
+    SHAN 23
+  </div>
+
+</div>
+
+
+<!-- NEWS -->
+
+<div class="section-title">
+  📰 Announcement / News
+</div>
+
+<div class="card">
+
+  <div class="news">
+    <strong>📢 SHAN 23 Update</strong>
+    <p style="font-size:13px;margin-top:5px;">
+      SHAN 23 Website ကို Mobile အတွက်
+      ပိုမိုလွယ်ကူစွာ အသုံးပြုနိုင်ရန် ပြုလုပ်ထားပါသည်။
+    </p>
+  </div>
+
+  <div class="news">
+    <strong>🔢 3D Search</strong>
+    <p style="font-size:13px;margin-top:5px;">
+      3D နံပါတ်ထည့်ပြီး Dream / Object အချက်အလက်များ
+      ရှာဖွေနိုင်မည့် System ဖြစ်ပါသည်။
+    </p>
+  </div>
+
+  <div class="news">
+    <strong>📊 Analysis</strong>
+    <p style="font-size:13px;margin-top:5px;">
+      Historical Result Data ကိုအသုံးပြုပြီး
+      Statistics နှင့် Analysis ပြုလုပ်နိုင်ပါသည်။
+    </p>
+  </div>
+
+</div>
+
+</main>
 
 
 <!-- FOOTER -->
+
 <footer>
 
-  <p>
-    © 2026 <strong>SHAN 23</strong>
+  <div class="footer-logo">
+    🔴 SHAN 23
+  </div>
+
+  <p style="font-size:13px;margin-bottom:13px;">
+    Follow / Contact Us
   </p>
 
-  <p>
-    All Rights Reserved.
-  </p>
+  <div class="social">
+
+    <a href="#" target="_blank">
+      Telegram
+    </a>
+
+    <a href="#" target="_blank">
+      Viber
+    </a>
+
+    <a href="#" target="_blank">
+      Facebook
+    </a>
+
+  </div>
+
+  <div class="copy">
+    © 2026 SHAN 23 • All Rights Reserved
+  </div>
 
 </footer>
 
 
 <script>
 
-function login(){
+/* =========================
+   2D HISTORICAL DATA
+========================= */
 
-  alert(
-    "Login System ကို နောက်တစ်ဆင့်မှာ ချိတ်ဆက်ပေးပါမယ်။"
-  );
+const history2D = [
+  "23","79",
+  "45","70",
+  "11","23",
+  "79","45"
+];
+
+
+/* =========================
+   3D DREAM DATA
+   Sample verified entry
+========================= */
+
+const dreamData = {
+
+  "601":{
+    meaning:"ရသေ့ဒေါက်ချာ",
+    related:"145"
+  },
+
+  "145":{
+    meaning:"601 နှင့် ဆက်စပ်သော နံပါတ်",
+    related:"601"
+  },
+
+  "723":{
+    meaning:"Demo Dream Data",
+    related:"321"
+  }
+
+};
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchDream(){
+
+  const input =
+    document.getElementById("searchInput")
+    .value
+    .trim();
+
+  const result =
+    document.getElementById("searchResult");
+
+  if(!input){
+
+    result.style.display="block";
+
+    result.innerHTML =
+      "⚠️ 3D နံပါတ်ထည့်ပေးပါ။";
+
+    return;
+  }
+
+  const data = dreamData[input];
+
+  if(data){
+
+    result.style.display="block";
+
+    result.innerHTML = `
+      <div class="search-number">
+        ${input}
+      </div>
+
+      <div style="margin-top:7px;">
+        📝 အဓိပ္ပါယ် —
+        <b>${data.meaning}</b>
+      </div>
+
+      <div style="margin-top:7px;">
+        🔢 ဆက်စပ်နံပါတ် —
+        <b>${data.related}</b>
+      </div>
+    `;
+
+  }else{
+
+    result.style.display="block";
+
+    result.innerHTML = `
+      ❌ <b>${input}</b>
+      အတွက် Data မတွေ့သေးပါ။
+      <br><br>
+      နောက်ပိုင်းတွင် 1000 Dreams Data
+      ထည့်သွင်းနိုင်ပါသည်။
+    `;
+
+  }
 
 }
+
+
+/* =========================
+   ENTER KEY SEARCH
+========================= */
+
+document
+  .getElementById("searchInput")
+  .addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+      searchDream();
+    }
+
+  });
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+function calculateStats(){
+
+  const total =
+    history2D.length;
+
+  const unique =
+    [...new Set(history2D)].length;
+
+  const counts = {};
+
+  history2D.forEach(num=>{
+    counts[num] =
+      (counts[num] || 0) + 1;
+  });
+
+  let most =
+    history2D[0];
+
+  Object.keys(counts).forEach(num=>{
+
+    if(
+      counts[num] >
+      counts[most]
+    ){
+      most=num;
+    }
+
+  });
+
+  document
+    .getElementById("total2d")
+    .textContent=total;
+
+  document
+    .getElementById("unique2d")
+    .textContent=unique;
+
+  document
+    .getElementById("most2d")
+    .textContent=most;
+
+}
+
+
+/* =========================
+   AUTO 2D PREDICTION
+========================= */
+
+function generate2DPrediction(){
+
+  const counts={};
+
+  history2D.forEach(num=>{
+
+    counts[num] =
+      (counts[num] || 0)+1;
+
+  });
+
+  const sorted =
+    Object.keys(counts)
+      .sort(
+        (a,b)=>
+        counts[b]-counts[a]
+      );
+
+  let candidates =
+    sorted.slice(0,5);
+
+  /*
+   If fewer than 5 numbers exist,
+   generate additional candidates.
+  */
+
+  const allNumbers =
+    Array.from(
+      {length:100},
+      (_,i)=>
+      String(i).padStart(2,"0")
+    );
+
+  for(
+    let i=0;
+    candidates.length<5 &&
+    i<allNumbers.length;
+    i++
+  ){
+
+    if(
+      !candidates.includes(
+        allNumbers[i]
+      )
+    ){
+
+      candidates.push(
+        allNumbers[i]
+      );
+
+    }
+
+  }
+
+  const box =
+    document
+      .getElementById("prediction2d");
+
+  box.innerHTML="";
+
+  candidates
+    .slice(0,5)
+    .forEach(num=>{
+
+      const span =
+        document.createElement("span");
+
+      span.className="pred-num";
+
+      span.textContent=num;
+
+      box.appendChild(span);
+
+    });
+
+}
+
+
+/* =========================
+   AUTO 3D PREDICTION
+========================= */
+
+function generate3DPrediction(){
+
+  const candidates=[
+    "601",
+    "145",
+    "723",
+    "321",
+    "230"
+  ];
+
+  const box =
+    document
+      .getElementById("prediction3d");
+
+  box.innerHTML="";
+
+  candidates.forEach(num=>{
+
+    const span =
+      document.createElement("span");
+
+    span.className="pred-num";
+
+    span.textContent=num;
+
+    box.appendChild(span);
+
+  });
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+calculateStats();
+
+generate2DPrediction();
+
+generate3DPrediction();
 
 </script>
 
